@@ -45,69 +45,83 @@
 								<header class="major">									
 									<h1>Web App Development Project</h1>
 									<p>This page details and displays my submission for the assignment.
-										The aim of the assignment was to:
+										The aim of the assignment was to create a web application, using ASP.NET Core MVC6.
 									</p>
+									<p> I gained a mark of 87% for my assignment.										
+									</p>
+									
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<div class="image main"><img src="images/pic16.jpg" alt="" /></div>
+								<p>	
+									According to the assignement specification the website must have the following functionalities: The web application admin,
+									who are the clients, can create posts and their users, who are your client’s customers, can comment on those posts.
+								</p>
+								<p>
+									This system was implemented in ASP.NET Core MVC6, which I used in Visual Studio. This was a great introduction to web development, I primarily used C# to program the backend of the website and to allow database migrations, which made handling the databases a lot easier and quicker.
+								</p>
+								<p>
+									For this assignment I started with the backend.
+									Trying to get the system to allow blog posts to be created, read, updated 
+									and deleted as this is the main reason for the blog website.
+									This was done by utilising a SQL database along with using a repository class and interface in C#. 
+									This worked perfectly, users could add a new post to the system, view 
+									that added post and had the option to update or delete it. When I was happy with the system I styled it
+									,using Bootstrap. The create and update post webpage looks like this:
+									<img src="images/pic22.jpg" alt="" class="image fit" >
+									The admin is able to add a Title and Description to the post that is displayed on the homepage.
+									The website also allows the Admin to add a category to the post so that customers can filter through
+									cateogories on the homepage.
+									I used a text editor that is created in java script for the Admin to add a body of text to the post.
+									They can use HTML markup to style the text.
+									The Admin is also able to add an image to the post.
+									While developing the website I came across Search Engine Optimisation (SEO) I thought that this would be
+									a good element to add to this particular website as it would allow the Admin to extend their reach and have a louder
+									presence on the internet. To do this I added the function to add tags to posts. These tags are used as meta tags to 
+									be found by search algorithms to give the Admin's blog a higher chance of being found by customers.
+								</p>
+								<p>
+									Once the database was up and running I wanted to make sure that only the website Admin could access the database for the blog posts. I had to make sure that the database was safe, and could not be changed by anyone who wasn’t the Admin. For this I added Authorisation to the website. I used a claims based system that relied on roles in the system. Users of the website would have to sign in to the site to access certain features. 
+									<img src="images/pic19.jpg" alt="" class="image fit" >
+								<p>
+									Anyone can view the site, but to engage with the website the user has to be a registered customer or Admin and sign in with the appropriate credentials. When the users signs in they are assigned a role either ‘User’ or ‘Admin’ and these roles determine what they can access in the system. Only admin accounts can access the admin page, where they can view all posts, create, edit and delete posts. Users can add comments to posts, If the user does not have a role they can only view certain pages.
+								<img src="images/pic21.jpg" alt="" class="image fit" >
+								</p>
+								<p>
+									I am very proud with this website, as it is the first full stack website I have ever developed. The assignment taught me about the importance of Databases and how they’re used in business. I enjoyed working on the backend, but loved working on the front end. I spent hours designing and styling the website, working a lot with icons and bootstrap to make the website as professional and as marketable as possible.
+								</p>
 							</section>
 
 					</div>
 
 				<!-- Footer -->
+					<!-- Footer -->
 					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
+						
+							<section class="split contact">
+								<section class="alt">
+									<h3>Address</h3>
+									<p>Treorchy<br />
+									Rhondda Cynon Taf, CF42 6SW</p>
+								</section>
+								<section>
+									<h3>Email</h3>
+									<p>hamptonds97@outlook.com</p>
+								</section>
+								<section>
+									<h3>Social</h3>
+									<ul class="icons alt">
+										<li><a href="https://www.linkedin.com/in/hamptonds97" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>									
+										<li><a href="https://www.instagram.com/hamptonds1997/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+									</ul>
+								</section>
 							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+						</footer>
+	
+					<!-- Copyright -->
+						<div id="copyright">
+							<ul><li>&copy; Dylan Sion Hampton 2019</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						</div>
 
 			</div>
 
