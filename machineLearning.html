@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>Machine Learning Project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -44,63 +44,62 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<h1>Big Data and Machine Learning</h1>
+									<p>
+											For this coursework I was proposed with the following problem: To develop a system that can accurately recognize objects within an image. The images come from a CIFAR10 file that includes numpy matrices of training and testing images along with training and testing labels. 
+									</p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<div class="image main"><img src="images/pic11.jpg" alt="" /></div>
+								<p> 
+									After some thought and research I decided to implement a Neural Network (NN) within the system. The NN is used on a preprocessed image to decide what its label should be in regards to what object is in the image. I.e. should the image contain an airplane, then the image should gain the label ‘airplane’. During testing the predicted label is compared to the actual label and the NN is awarded; a positive reward if it is correct or a negative reward if it is incorrect. Backpropagation is then used to update the weights of the NN in order to improve its predictions. 
+								</p>
+								<p> 
+									During my initial experiments I found that epoch helped with the accuracy of the NN. The higher the value, the more accurate my results became. I also noticed that adding another hidden layer into the NN helped improve its accuracy.				
+								</p>
+								<p>
+									I have decided to implement a NN based system to learn and recognize the object within the CIFAR10 data set. Below is the initial flow diagram of the proposed system, at low level:
+								</p>
+								<p>
+										<b>Load Image Data:</b> Loading the dataset was trivial especially as the data had already been segmented into different .npy files. Therefore I extracted the data from those files and stored them into suitable variables. 
+								</p>
+								<p><b>Preprocessing: </b> Initially I scaled the pixel values of the training and test images from a range of 0 to 255, to a range of 0 to 1. This limits the amount of data in each image and helps with extracting features. After this I created two new numpy arrays for ‘hog_train_image’ and ‘hog_test_image’ created from the original ‘train_images’ and ‘test_images’ arrays. These new arrays are used store the features extracted from the image.
+								</p>		
+								<p>	<b>Feature Extraction:</b> To extract the features in the images I decided to use the function proposed in the assignment, that is the function that computes HOG features. I found detecting features in this way helped the NN accurately predict the object within the image. I then tested that this feature extraction worked and displayed a figure in black and white.
+								</p>	
+								<p><b>Develop NN: </b> After I was satisfied with the feature extraction I began to develop a model for the NN. To develop the NN I first had to implement keras. The NN model I decided to use is Sequential. The Sequential model is a linear stack of layers. [1] I believe it to be a simple model to understand for beginners to NN. The Sequential model is created and layers are added one at a time until the developer is happy with its network topology.
+								</p><b>Train NN: </b> After developing the model, it needs to be trained. To train a model it must be fed with the training data.[4] This system trains the NN with the ‘hog_train_images’ and ‘train_labels’ arrays. The model learns to associate images and labels.  Then the model is asked to make predictions about the test set ‘hog_test_images. The system verifies that the predictions match the labels from ‘test_labels’. To evaluate how accurate the model performs, the system calculates the loss and accuracy.  
+								<p><b>Make Predictions: </b> When the model is trained it can get used to make predictions about the images. This is done by showing the model an image and comparing its result to the actual result.[4] These results can be mapped to graphs for visualizing the results.
+								</p>
+										
+								<p>
+									After compiling the system I ran some predictions in the system. I created a sample of 20 images and ran these through the networks outputting the image, along with the networks prediction, its probability that the object is what the NN predicts it to be and a graph that shows its predictions. In this system the red graph shows the predicted label, while the blue graph shows the true label. When these match, the system considers the prediction to be correct and the NN is updated accordingly. If not the system considers the prediction to be incorrect. On a first test of this system it correctly predicted 8/20 images. I will run the predictions 5 times and calculate the average of these to get an idea of how accurate the system is at object classification. The results will be shown in the form of a table.
+								</p>
+								<p>
+									Interestingly most of this coursework was trial and error. I created the model though was unsure what would be its best setup. I had to experiment with different values and setups. Because of this I have created a system that can successfully classify images 47% of the time. I am satisfied with this system although I do believe that it could be better. I believe that if the preprocessing stages were better, the system will be more accurate. I don’t preprocess the images much and therefore there is a lot of data still in the images. To increase accuracy I would add edge detection to the system along with reducing noise and applying a blur filter, such as a Gaussian blur. I believe that these will make it so that only the absolutely necessary data from the images will be used to classify it, which will make it easier for the system to extract features and classify that image.
+								</p>
+										
 							</section>
 
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
+				<footer id="footer">
+						
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<p>Treorchy<br />
+								Rhondda Cynon Taf, CF42 6SW</p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p>hamptonds97@outlook.com</p>
 							</section>
 							<section>
 								<h3>Social</h3>
 								<ul class="icons alt">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://www.linkedin.com/in/hamptonds97" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>									
+									<li><a href="https://www.instagram.com/hamptonds1997/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</section>
@@ -109,7 +108,7 @@
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<ul><li>&copy; Dylan Sion Hampton 2019</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
 
 			</div>
