@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>Computer Graphics Assignment</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,24 +19,24 @@
 
 				<!-- Header -->
 				<header id="header">
-						<a href="index.html" class="logo">My Portfolio</a>
-					</header>
+					<a href="index.html" class="logo">My Portfolio</a>
+				</header>
 
-				<!-- Nav -->
-				<nav id="nav">
-						<ul class="links">
-							<li ><a href="index.html">Home Page</a></li>
-							<li ><a href="finalYearProject.html">Facial Recognition System </a></li>
-							<li ><a href="blogApp.html">Web Application System</a></li>
-							<li><a href="machineLearning.html">Object Classification System</a></li>
-							<li class="active"><a href="computerGraphics.html">CT Graphics System</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/hamptonds97" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.instagram.com/hamptonds1997/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+			<!-- Nav -->
+			<nav id="nav">
+					<ul class="links">
+						<li ><a href="index.html">Home Page</a></li>
+						<li ><a href="finalYearProject.html">Facial Recognition System </a></li>
+						<li ><a href="blogApp.html">Web Application System</a></li>
+						<li><a href="machineLearning.html">Object Classification System</a></li>
+						<li class="active"><a href="computerGraphics.html">CT Graphics System</a></li>
+					</ul>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/hamptonds97" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/hamptonds1997/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						
+					</ul>
+				</nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -44,72 +44,64 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									
+									<h1>Computer Graphics Assignment</h1>
+									<p>For this assignment I was given image slices of a CT scan of
+										a persons head. The slices we of the top, front and side of the head.
+										The task was to take these slices and create a GUI that can display them
+										and allow the user to interact with them.
+									</p>
+
+									<p>
+										I gained a mark of 62% for my assignment.
+									</p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<div class="image main"><img src="images/pic30.jpg" alt="" /></div>
+								<p>The first task I had with this assignment was to display 3 images that each contained all slices of that image. For the front and side images there were 255 slices and the top image had 155. I decided to implement a slider function that would allow users to go through each slice, quickly and easily. The sliders are very pleasing and responsive to use. They make interacting with the system pleasant and look pleasant too. </p>
+
+								<p>Once this was implemented and worked correctly I decided to implement a button that, when clicked, would allow for a Max Intensity Projection(MIP) of the image to be displayed. Each part of the image had its own button for MIP. The screenshot image at the top of this page, shows what the images look like when MIP has been added. MIP is a method that consists of projecting the voxel with the highest attenuation value on every view throughout the volume onto a 2D image.</p>
+								<p> This is useful in reading CT scans as the method tends to display bone and contrast material-filled structures preferentially, and other lower-attenuation structures are not well visualised. MIP is primarily used to improve the detection of pulmonary nodules asses their profusion. Another use for MIP is that sections of variable thickness are excellent for assessing the size and location of vessels, including the pulmonary arteries and vein.</p>
+								</p>
+								<p>After implementing MIP I decided to add a feature that would resize the images. To do this I used two sliders the left slider controls the length of the image while the right slider controls its width. To change the size of the image all the user needs to do is adjust the sliders and then click on the button to change the size of an image. Each resize button uses the same sliders therefore the button must be clicked so that the system knows which image to resize. In this system I decided to use the nearest neighbour approach to resizing.
+								</p>
+								<p> Nearest-Neighbour interpolation is a simple method of multivariate interpolation in one or more dimensions. Interpolation is the problem of approximating the value of a function for a non-given point in some space when given the value of that function in points around that point. This means that the nearest neighbour algorithm selects the value of the nearest point and does not consider the values of neighbouring points at all. This allows the image to be resized, though creates sharp and blocky edges when the image is bigger. There are other algorithms that can correct this such as bilinear interpolation and trilinear interpolation. These help smooth the lines in the image, preserving the resolution in the image when it is made larger.
+								</p>
+								<p>This assignment was a great introduction into computer graphics and the methods and ideas studied here helped me a lot with my Final Year Project work, helping me understand how images are processed as this is vital to the preprocessing stages in that project. I was very happy with my submission, I believe the system was good because of its functionality but also its design and usability.
+								</p>
+								
 							</section>
 
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
+				<footer id="footer">
+						
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<p>Treorchy<br />
+								Rhondda Cynon Taf, CF42 6SW</p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p>hamptonds97@outlook.com</p>
 							</section>
 							<section>
 								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
+								<section>
+									<h3>Social</h3>
+									<ul class="icons alt">
+										<li><a href="https://www.linkedin.com/in/hamptonds97" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>									
+										<li><a href="https://www.instagram.com/hamptonds1997/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+										
+									</ul>
+								</section>
 						</section>
 					</footer>
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<ul><li>&copy; Dylan Sion Hampton 2019</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
 
 			</div>
